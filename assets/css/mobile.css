@@ -1,0 +1,160 @@
+/* Mobile Styles for UgandaMove */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-links, .auth-buttons {
+        display: none;
+    }
+    
+    .nav-links.show, .auth-buttons.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        z-index: 100;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .auth-buttons.show {
+        top: unset;
+        bottom: 0;
+        flex-direction: row;
+        justify-content: center;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Hero Section */
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    /* Features */
+    .feature-card {
+        margin-bottom: 20px;
+    }
+    
+    /* Booking Section */
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Tracking Section */
+    .tracking-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Popular Routes */
+    .routes-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* App Download */
+    .app-download {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 5%;
+    }
+    
+    .app-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .app-buttons {
+        justify-content: center;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    /* Modals */
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    /* Payment Modal */
+    .payment-methods {
+        flex-direction: column;
+    }
+    
+    /* Tracking Map */
+    .journey-info {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .update-item {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero Section */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    /* Sections */
+    section {
+        padding: 40px 5%;
+    }
+    
+    /* Footer */
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ticket */
+    .ticket {
+        padding: 15px;
+    }
+    
+    .ticket-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    /* Payment */
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+} 
