@@ -22,14 +22,62 @@ UgandaMove leverages mobile money platforms like MTN Mobile Money and Airtel Mon
 - HTML5
 - CSS3
 - JavaScript
+- PHP 7.4+ 
+- MySQL 5.7+
 - Font Awesome for icons
 - Google Fonts
 
-## Getting Started
+## Installation and Setup
 
-1. Clone the repository or download the code
-2. Open `index.html` in a web browser
-3. Explore the interface and test the functionality
+### Prerequisites
+- XAMPP, WAMP, MAMP, or any PHP development environment (PHP 7.4+ recommended)
+- MySQL 5.7 or higher
+- Web browser (Chrome, Firefox, Safari, or Edge)
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/yourusername/ugandamove.git
+# Or download and extract the ZIP file to your htdocs folder
+```
+
+### Step 2: Database Setup
+1. Start your Apache and MySQL services in XAMPP/WAMP
+2. Open phpMyAdmin (http://localhost/phpmyadmin)
+3. Create a new database named `uganda_move`
+4. Import the database schema:
+   - Select the `uganda_move` database
+   - Click the "Import" tab
+   - Select the file `database.sql` from the project 
+   - Click "Go" to execute the SQL script
+
+### Step 3: Configure the Application
+1. Open `config/config.php` and update database credentials if needed:
+```php
+$db_host = "localhost";
+$db_username = "root";     // Change if using different MySQL username
+$db_password = "";         // Add your MySQL password if set
+$db_name = "uganda_move";
+```
+
+2. Ensure the BASE_URL constant matches your environment:
+```php
+define('BASE_URL', 'http://localhost/assignments/ticketing/');
+```
+
+### Step 4: Permissions
+Ensure your web server has write permissions for:
+- The entire project directory (for sessions)
+- Any upload directories if implemented
+
+### Step 5: Run the Application
+1. Navigate to http://localhost/assignments/ticketing/ in your browser
+2. The application should load with sample data pre-populated
+
+### Troubleshooting
+- If you encounter database connection errors, verify your database credentials in `config/config.php`
+- Check your web server error logs for PHP errors
+- Make sure all required PHP extensions are enabled (mysqli, mbstring, etc.)
+- If tables are missing, confirm that the database import completed successfully
 
 ## Sample Usage
 
