@@ -78,7 +78,7 @@
         <div class="ticket">
             <div class="ticket-header">
                 <div class="logo">UgandaMove</div>
-                <div class="ticket-type">Bus Ticket</div>
+                <div class="ticket-type"><?= isset($booking_confirmation['transport_type']) ? ucfirst($booking_confirmation['transport_type']) : 'Bus' ?> Ticket</div>
             </div>
             <div class="ticket-details">
                 <div class="ticket-row">
@@ -104,6 +104,16 @@
                 <div class="ticket-row">
                     <div class="ticket-label">Time:</div>
                     <div class="ticket-value" id="ticket-time"><?= htmlspecialchars($booking_confirmation['time']) ?></div>
+                </div>
+                <?php if (isset($booking_confirmation['passengers']) && $booking_confirmation['passengers'] > 1): ?>
+                <div class="ticket-row">
+                    <div class="ticket-label">Passengers:</div>
+                    <div class="ticket-value" id="ticket-passengers"><?= htmlspecialchars($booking_confirmation['passengers']) ?></div>
+                </div>
+                <?php endif; ?>
+                <div class="ticket-row">
+                    <div class="ticket-label">Total Price:</div>
+                    <div class="ticket-value" id="ticket-price">UGX <?= number_format($booking_confirmation['total_price']) ?></div>
                 </div>
             </div>
             <div class="ticket-footer">
@@ -170,7 +180,15 @@
                         <input type="tel" id="phone-number" name="phone_number" placeholder="e.g., 0773123456" required>
                     </div>
                 </div>
+                <?php if (!isset($_SESSION['user'])): ?>
+                <div class="login-prompt">
+                    <p>You need to be logged in to complete your booking.</p>
+                    <button type="button" class="login-btn-prompt">Login</button>
+                    <button type="button" class="signup-btn-prompt">Sign Up</button>
+                </div>
+                <?php else: ?>
                 <button type="submit" name="complete_booking" id="pay-btn" class="pay-btn">Pay Now</button>
+                <?php endif; ?>
             </div>
         </form>
     </div>

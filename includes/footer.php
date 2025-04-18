@@ -1,4 +1,4 @@
-    <footer>
+<footer>
         <div class="footer-content">
             <div class="footer-logo">
                 <div class="logo">
@@ -266,6 +266,31 @@
                 });
             });
         }
+        
+        // Additional code for login/signup prompt
+        const loginBtnPrompt = document.querySelector('.login-btn-prompt');
+        const signupBtnPrompt = document.querySelector('.signup-btn-prompt');
+        
+        if (loginBtnPrompt) {
+            loginBtnPrompt.addEventListener('click', function() {
+                if (paymentModal) paymentModal.style.display = 'none';
+                if (loginModal) loginModal.style.display = 'flex';
+            });
+        }
+        
+        if (signupBtnPrompt) {
+            signupBtnPrompt.addEventListener('click', function() {
+                if (paymentModal) paymentModal.style.display = 'none';
+                if (signupModal) signupModal.style.display = 'flex';
+            });
+        }
+        
+        // Show login modal if redirected after login requirement
+        <?php if (isset($_GET['show_login']) && $_GET['show_login'] == 1): ?>
+        if (loginModal) {
+            loginModal.style.display = 'flex';
+        }
+        <?php endif; ?>
     });
     </script>
 </body>

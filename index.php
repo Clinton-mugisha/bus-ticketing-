@@ -11,10 +11,13 @@ require_once 'handlers/booking_handler.php';
 require_once 'handlers/tracking_handler.php';
 
 // Display any SQL errors during development (remove in production)
-if (isset($conn) && $conn->error) {
-    echo '<div style="color:red;padding:10px;background:#ffeeee;margin:10px;border:1px solid #ff0000;">';
-    echo 'SQL Error: ' . htmlspecialchars($conn->error);
-    echo '</div>';
+// Check if connection exists and has not been closed
+if (isset($conn) && $conn instanceof mysqli && $conn->ping()) {
+    if ($conn->error) {
+        echo '<div style="color:red;padding:10px;background:#ffeeee;margin:10px;border:1px solid #ff0000;">';
+        echo 'SQL Error: ' . htmlspecialchars($conn->error);
+        echo '</div>';
+    }
 }
 
 // Include header (HTML head and navigation)
@@ -37,4 +40,9 @@ include_once 'includes/modals.php';
 
 // Include footer
 include_once 'includes/footer.php';
+
+// Close database connection at the end of the script
+if (function_exists('closeDbConnection')) {
+    closeDbConnection();
+}
 ?>
