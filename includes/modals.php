@@ -35,20 +35,21 @@
         <form id="signup-form" method="post" action="">
             <?php if (isset($signup_error)): ?>
                 <div class="error-message">
-                    <p><?= $signup_error ?></p>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p><?= htmlspecialchars($signup_error) ?></p>
                 </div>
             <?php endif; ?>
             <div class="form-group">
                 <label for="signup-name">Full Name</label>
-                <input type="text" id="signup-name" name="signup_name" required>
+                <input type="text" id="signup-name" name="signup_name" value="<?= isset($_POST['signup_name']) ? htmlspecialchars($_POST['signup_name']) : '' ?>" required>
             </div>
             <div class="form-group">
                 <label for="signup-email">Email</label>
-                <input type="email" id="signup-email" name="signup_email" required>
+                <input type="email" id="signup-email" name="signup_email" value="<?= isset($_POST['signup_email']) ? htmlspecialchars($_POST['signup_email']) : '' ?>" required>
             </div>
             <div class="form-group">
                 <label for="signup-phone">Phone Number</label>
-                <input type="tel" id="signup-phone" name="signup_phone" required>
+                <input type="tel" id="signup-phone" name="signup_phone" placeholder="e.g., 0773123456" value="<?= isset($_POST['signup_phone']) ? htmlspecialchars($_POST['signup_phone']) : '' ?>" required>
             </div>
             <div class="form-group">
                 <label for="signup-password">Password</label>
