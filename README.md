@@ -2,7 +2,7 @@
 
 A digital platform designed to simplify the process of booking tickets for buses, trains, and other public transport services in Uganda.
 
-![UgandaMove](https://source.unsplash.com/random/1200x600/?bus,train)
+![UgandaMove](/assets/bus.png)
 
 ## Overview
 
