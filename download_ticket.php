@@ -3,7 +3,7 @@
 session_start();
 
 // Define base constants and include DB connection
-define('BASE_URL', 'http://localhost/assignments/ticketing/');
+define('BASE_URL', 'http://localhost/ticketing/');
 require_once 'config/db_connect.php';
 
 // Check if booking ID is provided

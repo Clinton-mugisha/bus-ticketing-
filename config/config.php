@@ -6,7 +6,7 @@ $db_password = "";
 $db_name = "uganda_move";
 
 // Define base constants
-define('BASE_URL', 'http://localhost/assignments/ticketing/');
+define('BASE_URL', 'http://localhost/ticketing/');
 
 // Start session
 session_start();

@@ -61,7 +61,7 @@ $db_name = "uganda_move";
 
 2. Ensure the BASE_URL constant matches your environment:
 ```php
-define('BASE_URL', 'http://localhost/assignments/ticketing/');
+define('BASE_URL', 'http://localhost/ticketing/');
 ```
 
 ### Step 4: Permissions
@@ -70,7 +70,7 @@ Ensure your web server has write permissions for:
 - Any upload directories if implemented
 
 ### Step 5: Run the Application
-1. Navigate to http://localhost/assignments/ticketing/ in your browser
+1. Navigate to http://localhost/ticketing/ in your browser
 2. The application should load with sample data pre-populated
 
 ### Troubleshooting
