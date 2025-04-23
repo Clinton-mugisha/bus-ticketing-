@@ -36,7 +36,7 @@ UgandaMove leverages mobile money platforms like MTN Mobile Money and Airtel Mon
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/yourusername/ugandamove.git
+git clone https://github.com/Clinton-mugisha/bus-ticketing-.git
 # Or download and extract the ZIP file to your htdocs folder
 ```
 
